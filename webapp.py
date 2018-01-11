@@ -12,10 +12,11 @@ def render_response():
     #The request object stores information that was sent to the server.
     #args is a multi dictionary, it can have multiple values for one key. MultiDict.
     #The information in args is visible in the url for the page being requested(ex. .../response?color=blue) 
-    if color == 'green':
-        reply = "Thats mine as well, Dawg!"
-    else:
-        reply = "My fav color is green."
+    if request.method == 'POST':
+        if color == 'green':
+            reply = "Thats mine as well, Dawg!"
+        else:
+            reply = "My fav color is green."
     return render_template('response.html', response = reply)
     
     
